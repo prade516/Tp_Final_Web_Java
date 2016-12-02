@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>....Bienvenido al Sistema Juego Online....</title>
+<script type="text/javascript">
+	function carga() {
+		document.getElementById("usuario").focus();
+	}
+	function validaDatos() {
+		var usuario=document.getElementById("usuario");
+		var password=document.getElementById("password");
+		if ((usuario.value==""|| usuario.value==''|| usuario.value==null)&&
+		    (password.value==""||password.value==''||password.value==null)){
+			alert("Ingresa tu Usuario y tu contraseña")
+			usuario.focus();
+			return false;
+		}
+		else if (usuario.value==""|| usuario.value==''|| usuario.value==null){
+				alert("Ingresa tu Usuario")
+				usuario.focus();
+				return false;
+		}
+		else if (password.value==""||password.value==''||password.value==null){
+			alert("Ingresa tu contraseña")
+			password.focus();
+			return false;
+		}
+		else{
+			return true;
+		}
+		
+	}
+</script>
+<link href="CSS/csslogin.css" rel="stylesheet">
+</head>
+<body onload="carga();">
+<form action="loginweb.jr" method="POST" onsubmit="return validaDatos()">
+	<center>
+	<br><br>
+	<br><br>
+		<div class="login_form">
+			<h1> Ingresa al Sistema de Juego Online</h1> 			
+			<input type="text" placeholder="Usuario" name="usuario"  id="usuario" class="login_un" >
+			<input type="password" placeholder="Contraseña" name="password" id="password" class="login_pas"><br><br>
+			<button type="submit" value="Aceptar" class="login_btn">Aceptar</button>
+			<button type="submit" value="Cancelar" class="login_btn">Cancelar</button>
+		</div>
+	</center>
+</form>
+
+</body>
+</html>
